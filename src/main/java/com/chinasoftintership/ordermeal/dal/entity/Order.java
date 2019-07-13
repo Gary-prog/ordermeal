@@ -14,6 +14,7 @@ public class Order {
   private Date order_time;
   private String order_status;
   private int people_number;
+  private Date booking_time;
 
     public int getOrder_id() {
         return order_id;
@@ -37,6 +38,10 @@ public class Order {
 
     public int getPeople_number() {
         return people_number;
+    }
+
+    public Date getBooking_time() {
+        return booking_time;
     }
 
     public void setOrder_id(int order_id) {
@@ -63,6 +68,10 @@ public class Order {
         this.people_number = people_number;
     }
 
+    public void setBooking_time(Date booking_time) {
+        this.booking_time = booking_time;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -72,6 +81,7 @@ public class Order {
                 ", order_time=" + order_time +
                 ", order_status='" + order_status + '\'' +
                 ", people_number=" + people_number +
+                ", booking_time=" + booking_time +
                 '}';
     }
 }
