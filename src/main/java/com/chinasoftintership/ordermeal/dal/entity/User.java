@@ -13,7 +13,7 @@ public class User {
     private String user_name;
     private String sex;
     private String city;
-    private Image head_portrait;
+    private String head_portrait;
 
     public int getUser_id() {
         return user_id;
@@ -31,7 +31,7 @@ public class User {
         return city;
     }
 
-    public Image getHead_portrait() {
+    public String getHead_portrait() {
         return head_portrait;
     }
 
@@ -51,7 +51,7 @@ public class User {
         this.city = city;
     }
 
-    public void setHead_portrait(Image head_portrait) {
+    public void setHead_portrait(String head_portrait) {
         this.head_portrait = head_portrait;
     }
 
