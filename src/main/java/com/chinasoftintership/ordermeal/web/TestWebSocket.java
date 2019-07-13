@@ -1,6 +1,9 @@
 package com.chinasoftintership.ordermeal.web;
 
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,19 +28,24 @@ public class TestWebSocket {
 //        webSockets.add(this);
         addOnlineCount();
         //System.out.println(getOnlineCount());
-        LOGGER.info("open "+getOnlineCount());
+        LOGGER.info("当前人数: "+getOnlineCount());
     }
 
     @OnMessage
-    public void onMessage(String message,Session session)
+    public void onMessage(String message)
     {
+        JsonObject object = new JsonParser().parse(message).getAsJsonObject();
+        LOGGER.info(object.toString());
         LOGGER.info("消息: "+message);
     }
+
+
 
     @OnClose
     public void onClose()
     {
-
+        subOnlineCount();
+        LOGGER.info("当前人数 onlineCount={}",onlineCount);
     }
 
     @OnError
