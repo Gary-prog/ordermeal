@@ -8,18 +8,18 @@ import java.util.Date;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int coment_id;//评论编号
-    private int order_id;
+    private int comentId;//评论编号
+    private int orderId;
     private String content;
     private int stars;
-    private Date comment_time;
+    private Date commentTime;
 
-    public int getComent_id() {
-        return coment_id;
+    public int getComentId() {
+        return comentId;
     }
 
-    public int getOrder_id() {
-        return order_id;
+    public int getOrderId() {
+        return orderId;
     }
 
     public String getContent() {
@@ -30,16 +30,16 @@ public class Comment {
         return stars;
     }
 
-    public Date getComment_time() {
-        return comment_time;
+    public Date getCommentTime() {
+        return commentTime;
     }
 
-    public void setComent_id(int coment_id) {
-        this.coment_id = coment_id;
+    public void setComentId(int comentId) {
+        this.comentId = comentId;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public void setContent(String content) {
@@ -50,18 +50,18 @@ public class Comment {
         this.stars = stars;
     }
 
-    public void setComment_time(Date comment_time) {
-        this.comment_time = comment_time;
+    public void setCommentTime(Date commentTime) {
+        this.commentTime = commentTime;
     }
 
     @Override
     public String toString() {
         return "Comment{" +
-                "coment_id=" + coment_id +
-                ", order_id=" + order_id +
+                "comentId=" + comentId +
+                ", orderId=" + orderId +
                 ", content='" + content + '\'' +
                 ", stars=" + stars +
-                ", comment_time=" + comment_time +
+                ", commentTime=" + commentTime +
                 '}';
     }
 }

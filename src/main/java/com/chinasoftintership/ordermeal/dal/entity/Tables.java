@@ -7,32 +7,50 @@ import javax.persistence.*;
 public class Tables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int table_id;
-    private int capacity;
-    private String table_status;
+    private int tableId;
+    private int capacity;//容纳人数
+    private String tableStatus;
+    private String tableName;
 
-    public int getTable_id() {
-        return table_id;
+    public String getTableName() {
+        return tableName;
+    }
+
+    public int getTableId() {
+        return tableId;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public String getTable_status() {
-        return table_status;
+    public String getTableStatus() {
+        return tableStatus;
     }
 
-    public void setTable_id(int table_id) {
-        this.table_id = table_id;
+    public void setTableId(int tableId) {
+        this.tableId = tableId;
     }
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
-    public void setTable_status(String table_status) {
-        this.table_status = table_status;
+    public void setTableStatus(String tableStatus) {
+        this.tableStatus = tableStatus;
     }
 
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    @Override
+    public String toString() {
+        return "Tables{" +
+                "tableId=" + tableId +
+                ", capacity=" + capacity +
+                ", tableStatus='" + tableStatus + '\'' +
+                ", tableName='" + tableName + '\'' +
+                '}';
+    }
 }

@@ -8,46 +8,46 @@ import javax.persistence.*;
 public class OrderForDishes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int orderfordishes_id;//订单菜品表编号
-    private int dishesid;//菜品编号
-    private int orderid;//订单编号
-    private String dishesid_status;//订单状态
+    private int orderfordishesId;//订单菜品表编号
+    private int dishesId;//菜品编号
+    private int orderId;//订单编号
+    private String dishesidStatus;//订单状态
     private int number;//数量
 
-    public int getOrderfordishes_id() {
-        return orderfordishes_id;
+    public int getOrderfordishesId() {
+        return orderfordishesId;
     }
 
-    public int getDishesid() {
-        return dishesid;
+    public int getDishesId() {
+        return dishesId;
     }
 
-    public int getOrderid() {
-        return orderid;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public String getDishesid_status() {
-        return dishesid_status;
+    public String getDishesidStatus() {
+        return dishesidStatus;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setOrderfordishes_id(int orderfordishes_id) {
-        this.orderfordishes_id = orderfordishes_id;
+    public void setOrderfordishesId(int orderfordishesId) {
+        this.orderfordishesId = orderfordishesId;
     }
 
-    public void setDishesid(int dishesid) {
-        this.dishesid = dishesid;
+    public void setDishesId(int dishesId) {
+        this.dishesId = dishesId;
     }
 
-    public void setOrderid(int orderid) {
-        this.orderid = orderid;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public void setDishesid_status(String dishesid_status) {
-        this.dishesid_status = dishesid_status;
+    public void setDishesidStatus(String dishesidStatus) {
+        this.dishesidStatus = dishesidStatus;
     }
 
     public void setNumber(int number) {
@@ -57,10 +57,10 @@ public class OrderForDishes {
     @Override
     public String toString() {
         return "OrderForDishes{" +
-                "orderfordishes_id=" + orderfordishes_id +
-                ", dishesid=" + dishesid +
-                ", orderid=" + orderid +
-                ", dishesid_status='" + dishesid_status + '\'' +
+                "orderfordishesId=" + orderfordishesId +
+                ", dishesId=" + dishesId +
+                ", orderId=" + orderId +
+                ", dishesidStatus='" + dishesidStatus + '\'' +
                 ", number=" + number +
                 '}';
     }
