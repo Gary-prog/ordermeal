@@ -1,15 +1,13 @@
 package com.chinasoftintership.ordermeal.web;
 
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 @ServerEndpoint("/desks")
@@ -22,29 +20,39 @@ public class TestWebSocket {
     private static CopyOnWriteArraySet<TestWebSocket>webSockets = new CopyOnWriteArraySet<>();
 
     @OnOpen
-    public void onOpen()throws Exception
+    public void onOpen(Session session)throws Exception
     {
-//        this.session = session;
-//        webSockets.add(this);
+        this.session = session;
+        webSockets.add(this);
         addOnlineCount();
         //System.out.println(getOnlineCount());
         LOGGER.info("当前人数: "+getOnlineCount());
+        LOGGER.info("sessionId: "+session.getId());
     }
 
     @OnMessage
     public void onMessage(String message)
     {
-        JsonObject object = new JsonParser().parse(message).getAsJsonObject();
-        LOGGER.info(object.toString());
+//        JsonObject object = new JsonParser().parse(message).getAsJsonObject();
+//        LOGGER.info(object.toString());
         LOGGER.info("消息: "+message);
+        for(TestWebSocket socket:webSockets)
+        {
+            try{
+                socket.sendMessage(message);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
-
-
 
     @OnClose
     public void onClose()
     {
         subOnlineCount();
+        webSockets.remove(this);
         LOGGER.info("当前人数 onlineCount={}",onlineCount);
     }
 
@@ -66,6 +74,13 @@ public class TestWebSocket {
 
     public static synchronized int getOnlineCount() {
         return onlineCount;
-}
+    }
+
+    public void sendMessage(String message)throws IOException{
+        this.session.getBasicRemote().sendText(message);
+    }
+
+    public static void sendInfo()throws Exception{
 
     }
+}
