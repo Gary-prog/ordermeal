@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 @ServerEndpoint("/desks")
@@ -18,7 +19,6 @@ public class TestWebSocket {
     private static volatile int onlineCount = 0;
     private Session session;
     private static CopyOnWriteArraySet<TestWebSocket>webSockets = new CopyOnWriteArraySet<>();
-
     @OnOpen
     public void onOpen(Session session)throws Exception
     {
