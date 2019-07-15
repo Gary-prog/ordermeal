@@ -2,25 +2,23 @@ package com.chinasoftintership.ordermeal.dal.entity;
 
 import javax.persistence.*;
 
-import java.awt.*;
-
 @Entity
 @Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
-    private String user_name;
+    private int userId;
+    private String userName;
     private String sex;
     private String city;
-    private String head_portrait;
+    private String headPortrait;
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
     public String getSex() {
@@ -31,16 +29,16 @@ public class User {
         return city;
     }
 
-    public String getHead_portrait() {
-        return head_portrait;
+    public String getHeadPortrait() {
+        return headPortrait;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setSex(String sex) {
@@ -51,18 +49,18 @@ public class User {
         this.city = city;
     }
 
-    public void setHead_portrait(String head_portrait) {
-        this.head_portrait = head_portrait;
+    public void setHeadPortrait(String headPortrait) {
+        this.headPortrait = headPortrait;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
-                ", user_name='" + user_name + '\'' +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
                 ", sex='" + sex + '\'' +
                 ", city='" + city + '\'' +
-                ", head_portrait=" + head_portrait +
+                ", headPortrait=" + headPortrait +
                 '}';
     }
 }
