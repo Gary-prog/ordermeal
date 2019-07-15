@@ -6,22 +6,21 @@ import javax.persistence.*;
 @Table(name="user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private String openId;
     private String userName;
-    private String sex;
+    private Integer sex;
     private String city;
     private String headPortrait;
 
-    public int getUserId() {
-        return userId;
+    public String getOpenId() {
+        return openId;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public String getSex() {
+    public Integer getSex() {
         return sex;
     }
 
@@ -33,15 +32,15 @@ public class User {
         return headPortrait;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
@@ -56,7 +55,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "openId=" + openId +
                 ", userName='" + userName + '\'' +
                 ", sex='" + sex + '\'' +
                 ", city='" + city + '\'' +

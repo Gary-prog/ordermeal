@@ -56,7 +56,7 @@ public class Comment {
 
     @Override
     public String toString() {
-        return "Comment{" +
+        return "CommentRepo{" +
                 "comentId=" + comentId +
                 ", orderId=" + orderId +
                 ", content='" + content + '\'' +

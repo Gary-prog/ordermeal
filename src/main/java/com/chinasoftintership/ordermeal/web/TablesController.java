@@ -13,7 +13,7 @@ public class TablesController {
     @Autowired
     private TablesService tablesService;
 
-    @RequestMapping("desks/get")
+    @RequestMapping("/desks/get")
     public List<Tables> selectTables()
     {
         return tablesService.selectTables();

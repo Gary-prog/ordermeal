@@ -21,7 +21,8 @@ public class TablesServiceImpl implements TablesService {
     }
     public void setStatus(Integer tableId){
         Optional<Tables> tables = tablesRepo.findById(tableId);
-        Tables modifyid = tables.get();
-        modifyid.setTableStatus("已预定");
+        Tables table = tables.get();
+        table.setTableStatus("已预定");
+        tablesRepo.save(table);
     }
 }
