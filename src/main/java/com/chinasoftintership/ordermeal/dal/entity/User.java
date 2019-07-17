@@ -1,5 +1,6 @@
 package com.chinasoftintership.ordermeal.dal.entity;
 
+import com.sun.javafx.beans.IDProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

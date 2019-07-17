@@ -17,12 +17,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(String openId, String city, Integer sex, String userName, String headPortrait) {
         User user = new User();
-        user.setOpenId(openId);
-        user.setCity(city);
-        user.setSex(sex);
-        user.setUserName(userName);
-        user.setHeadPortrait(headPortrait);
-        userRepo.save(user);
+        System.out.println(" xxx"+openId);
+        if(!userRepo.findById(openId).isPresent())
+        {
+            user.setOpenId(openId);
+            user.setCity(city);
+            user.setSex(sex);
+            user.setUserName(userName);
+            user.setHeadPortrait(headPortrait);
+            userRepo.save(user);
+        }
 
     }
 }
