@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UserService {
      void save(String openId,String city,Integer sex,String userName,String headPortrait);
+
 }

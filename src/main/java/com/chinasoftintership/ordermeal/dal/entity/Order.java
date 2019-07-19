@@ -17,11 +17,13 @@ public class Order {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int orderId;
   private int tableId;
-  private int userId;
+  private String openId;
   private Date orderTime;
   private String orderStatus;
   private int peopleNumber;
   private Date bookingTime;
+  private float totalPrice;
+  private int count;
 
 
 }
