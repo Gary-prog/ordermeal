@@ -22,7 +22,7 @@ public class Order {
   private String orderStatus;
   private int peopleNumber;
   private Date bookingTime;
-  private int totalPrice;
+  private float totalPrice;
   private int count;
 
 

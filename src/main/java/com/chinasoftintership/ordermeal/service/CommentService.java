@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface CommentService {
-    void save(Integer orederId, String content, Date commentTime,int star);
+    void save(Integer orderId, String content,int star);
     JsonObject select();
 
 
